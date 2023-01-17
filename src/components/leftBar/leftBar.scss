@@ -1,0 +1,95 @@
+@import "../../style.scss";
+
+.leftBar {
+  @include themify($themes) {
+    flex: 2.5;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 10px;
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        span {
+          font-size: 14px;
+          color: gray;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 0 10px 10px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 16px;
+            color: themed("textColor");
+            font-weight: 500;
+          }
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 0 10px 10px;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+          transition: all ease 0.3s;
+          -webkit-transition: all ease 0.3s;
+          -moz-transition: all ease 0.3s;
+          -ms-transition: all ease 0.3s;
+          -o-transition: all ease 0.3s;
+
+          &:hover {
+            background: themed("bgSoft");
+
+          }
+
+          img {
+            width: 25px;
+          }
+
+          span {
+            font-size: 14px;
+            color: themed("textColor");
+          }
+
+        }
+      }
+    }
+  }
+}

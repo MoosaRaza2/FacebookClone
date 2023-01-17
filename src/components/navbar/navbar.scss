@@ -1,0 +1,128 @@
+@import "../../style.scss";
+
+.Nav{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  
+.navbar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 40px;
+    border-bottom: 1px solid themed("border");
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      @include mobile {
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      
+
+      .logo {
+        font-weight: bold;
+        font-size: 22px;
+        color: themed("logo");
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include mobile {
+          gap: 20px;
+        }
+
+        .nav-icon {
+          color: themed("textColor");
+          cursor: pointer;
+  
+          .h-icon {
+            font-size: 26px;
+          }
+        }
+  
+        
+  
+        .search {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border: 1px solid themed("border");
+          border-radius: 5px;
+          padding: 5px 10px;
+          @include mobile {
+            display: none;
+          }
+  
+          input {
+            border: none;
+            width: 500px;
+            background-color: transparent;
+            color: themed("textColor");
+            outline: none;
+  
+            @include mobile {
+              display: none;
+            }
+  
+            @include tablet {
+              width: 200px;
+            }
+          }
+        }
+      }
+
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include mobile {
+        display: none;
+      }
+
+      .nav-icon {
+        color: themed("textColor");
+
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+
+
+        @include tablet {
+          display: none;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          color: themed("textColor");
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+}
